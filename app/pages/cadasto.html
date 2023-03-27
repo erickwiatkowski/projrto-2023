@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+ <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Idade</th>
+      </tr>
+    </thead>
+    <tbody id="pessoas-table-body">
+    </tbody>
+  </table>
+
+  <form>
+    <label for="nome">Nome:</label>
+    <input type="text" id="new-nome">
+
+    <label for="idade">Idade:</label>
+    <input type="text" id="new-idade">
+
+    <label for="foto">Foto:</label>
+    <input type="link" id="new-foto">
+
+    <button type="button" onclick="cadastrar()">Cadastrar</button>
+  </form>
+
+  <div id="ultima-pessoa"></div>
+  <script src="/app/pages/cadastro.js"></script>
+</body>
+</html>
