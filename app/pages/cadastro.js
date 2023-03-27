@@ -34,9 +34,14 @@ function cadastrar() {
   // Salva o array no localStorage
   localStorage.setItem("pessoas", JSON.stringify(pessoas));
 
-  setTimeout(function() {
-    window.location.href = "/index.html";
-  }, 3000);
+ 
+  alert('Medicamento cadastrado com sucesso ! ')
+  if(confirm('deseja cadastra um novo produto')){
+  }else{
+    setTimeout(function() {
+      window.location.href = "/index.html";
+    }, 3000);
+  }
 }
 
 
