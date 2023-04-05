@@ -5,36 +5,62 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="/node_modules/materialize-css/dist/css/materialize.css" >
 </head>
 <body>
-  
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Farma EKL</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/index.html">Inicio</a></li>
+      </ul>
+    </div>
+  </nav>
 
- <table>
-    <thead>
-      <tr>
-        <th>Nome</th>
-        <th>Idade</th>
-      </tr>
-    </thead>
-    <tbody id="pessoas-table-body">
-    </tbody>
-  </table>
-
-  <form>
-    <label for="nome">Nome:</label>
-    <input type="text" id="new-nome">
-
-    <label for="idade">Idade:</label>
-    <input type="text" id="new-idade">
-
-    <label for="foto">Foto:</label>
-    <input type="link" id="new-foto">
-
-    <button type="button" onclick="cadastrar()">Cadastrar</button>
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+          <label for="first_name">Medicamento:</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="fabricante" type="text" class="validate">
+          <label for="last_name">Fabricante:</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="data-de-compra" type="number" class="validate">
+          <label for="last_name">Data de Compra:</label>
+        </div>
+      </div>
+    </form>
+  </div>
+  <form action="#">
+    <p>
+      <label>
+        <input name="group1" type="radio" checked />
+        <span>Generico</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input name="group1" type="radio" />
+        <span>Não Generico</span>
+      </label>
+    </p>
   </form>
-  <a href="/index.html"><button type="button" >Cadastrar</button></a>
 
-  <div id="ultima-pessoa"></div>
+  <div class="row">
+    <button type="button" onclick="cadastrar()">Cadastrar</button>
+    </div>
+    
   <script src="/app/pages/cadastro.js"></script>
+  <script src="/node_modules/jquery/dist/jquery.js"></script>
+  <script src="/node_modules/materialize-css/dist/js/materialize.js"></script>
+
 </body>
 </html>
+  
+ 

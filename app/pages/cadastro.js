@@ -1,3 +1,4 @@
+let Usuario = prompt("Insira seu nome: ");
 
 var pessoas = JSON.parse(localStorage.getItem("pessoas")) || [];
 

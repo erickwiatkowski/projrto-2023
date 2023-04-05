@@ -1,1 +1,0 @@
-let Usuario = prompt("Insira seu nome: ");
