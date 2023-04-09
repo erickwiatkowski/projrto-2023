@@ -5,56 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="node_modules/materialize-css/dist/css/materialize.css" >
-  <link rel="stylesheet" href="assets/libraries/meucss.css">
 </head>
 <body>
-    <div class="row">
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s6">
-              <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-              <label for="first_name">First Name</label>
-            </div>
-            <div class="input-field col s6">
-              <input id="last_name" type="text" class="validate">
-              <label for="last_name">Last Name</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-              <label for="disabled">Disabled</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="password" type="password" class="validate">
-              <label for="password">Password</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="email" type="email" class="validate">
-              <label for="email">Email</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col s12">
-              This is an inline input field:
-              <div class="input-field inline">
-                <input id="email_inline" type="email" class="validate">
-                <label for="email_inline">Email</label>
-                <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
-            
-      <script src="node_modules/jquery/dist/jquery.js"></script>
-      <!--JavaScript at end of body for optimized loading-->
-      <script src="node_modules/materialize-css/dist/js/materialize.js"></script>
-    
+    <label for="nome">Digite seu nome:</label>
+<input type="text" id="nome" placeholder="Seu nome aqui">
+
+<label for="idade">Digite sua idade:</label>
+<input type="number" id="idade">
+
+<label for="sexo">Selecione seu sexo:</label>
+<select id="sexo">
+  <option value="">Selecione...</option>
+  <option value="m">Masculino</option>
+  <option value="f">Feminino</option>
+</select>
+
+<script>
+    // Seleciona os elementos HTML
+let inputNome = document.getElementById("nome");
+let inputIdade = document.getElementById("idade");
+let selectSexo = document.getElementById("sexo");
+
+// Adiciona um evento de clique aos elementos
+inputNome.addEventListener("click", capturarTexto);
+inputIdade.addEventListener("click", capturarValor);
+selectSexo.addEventListener("click", capturarValor);
+
+// Função que captura o texto do elemento clicado
+function capturarTexto(event) {
+  // Obtém o valor do campo de entrada de texto
+  let texto = event.target.value;
+  
+  // Exibe o valor capturado em um alerta
+  alert("O texto capturado foi: " + texto);
+}
+
+// Função que captura o valor do elemento clicado
+function capturarValor(event) {
+  // Obtém o valor do elemento selecionado
+  let valor = event.target.value;
+  
+  // Exibe o valor capturado em um alerta
+  alert("O valor capturado foi: " + valor);
+}
+
+</script>
 </body>
 </html>

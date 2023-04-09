@@ -1,66 +1,41 @@
 let Usuario = prompt("Insira seu nome: ");
 
-var pessoas = JSON.parse(localStorage.getItem("pessoas")) || [];
+if (Usuario === 'Eric') {
+  alert('Bem vindo !!!')
 
-function cadastrar() {
-  // Captura os dados do formulário e cria um novo objeto
-  var newNome = document.getElementById("new-nome").value;
-  var newIdade = document.getElementById("new-idade").value;
-  var newFoto = document.getElementById("new-foto").value;
-  var newPessoa = { nome: newNome, idade: newIdade, foto: newFoto };
+  let produtos = JSON.parse(localStorage.getItem("produtos")) || [];
 
-  // Adiciona o objeto no array de pessoas
-  pessoas.push(newPessoa);
+  function cadastrar() {
+       let newmedicamento = document.getElementsByName("medicamento")[0].value;
+    let newfabricante = document.getElementsByName("fabricante")[0].value;
+    let newcompra = document.getElementsByName("data-de-compra")[0].value;
+    let newProduto = { medicamento: newmedicamento, fabricante: newfabricante, dataCompra: newcompra };
 
-  // Atualiza a tabela HTML
-  var tableBody = document.getElementById("pessoas-table-body");
-  var row = tableBody.insertRow();
+    // Adiciona o objeto no array de produtos
+    produtos.push(newProduto);
 
-  var nomeCell = row.insertCell(0);
-  nomeCell.innerHTML = newPessoa.nome;
+    // Salva o array no localStorage
+    localStorage.setItem("produtos", JSON.stringify(produtos));
 
-  var idadeCell = row.insertCell(1);
-  idadeCell.innerHTML = newPessoa.idade;
-
-  var fotoCell = row.insertCell(2);
-  var foto = document.createElement("img");
-  foto.src = newPessoa.foto;
-  fotoCell.appendChild(foto);
-
-  // Atualiza a última pessoa cadastrada
-  ultimaPessoa = newPessoa;
-  var ultimaPessoaDiv = document.getElementById("ultima-pessoa");
-  ultimaPessoaDiv.innerHTML = "Última pessoa cadastrada: " + ultimaPessoa.nome;
-
-  // Salva o array no localStorage
-  localStorage.setItem("pessoas", JSON.stringify(pessoas));
-
- 
-  alert('Medicamento cadastrado com sucesso ! ')
-  if(confirm('deseja cadastra um novo produto')){
-  }else{
-    setTimeout(function() {
-      window.location.href = "/index.html";
-    }, 3000);
+    alert('Medicamento cadastrado com sucesso ! ')
+    if(confirm('deseja cadastrar um novo produto')){
+    } else {
+      setTimeout(function() {
+        window.location.href = "/index.html";
+      }, 3000);
+    }
   }
+
+  // Exibe os produtos cadastrados ao carregar a página
+  let listaProdutos = document.getElementById("lista-produtos");
+  for (let i = 0; i < produtos.length; i++) {
+    let produto = produtos[i];
+    let listItem = document.createElement("li");
+    let produtoInfo = document.createTextNode(produto.medicamento + " - " + produto.fabricante + " - " + produto.dataCompra);
+    listItem.appendChild(produtoInfo);
+    listaProdutos.appendChild(listItem);
+  }
+} else {
+  alert('Usuário não possui acesso a esta aba')
+  window.location.href = "/index.html";
 }
-
-
-// Exibe as pessoas cadastradas ao carregar a página
-for (var i = 0; i < pessoas.length; i++) {
-  var pessoa = pessoas[i];
-  var tableBody = document.getElementById("pessoas-table-body");
-  var row = tableBody.insertRow();
-
-  var nomeCell = row.insertCell(0);
-  nomeCell.innerHTML = pessoa.nome;
-
-  var idadeCell = row.insertCell(1);
-  idadeCell.innerHTML = pessoa.idade;
-
-  var fotoCell = row.insertCell(2);
-  var foto = document.createElement("img");
-  foto.src = pessoa.foto;
-  fotoCell.appendChild(foto);
-  
-  }
