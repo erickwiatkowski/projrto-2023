@@ -7,6 +7,10 @@
   <title>Document</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="/node_modules/materialize-css/dist/css/materialize.css" >
+  <script src="/app/pages/new.js"></script>
+  
+  <script type="module" src="/app/model/medicamento.js"></script>
+  <script type="module" src="/app/pages/cadastro.js"></script>
 </head>
 <body>
   
@@ -20,28 +24,27 @@
     <form class="col s12">
       <div class="row">
         <div class="input-field col s12 center">
-          <input placeholder="Placeholder" name="medicamento" type="text" class="validate">
+          <input placeholder="Placeholder" name="medicamento" type="text" class="validate" id="medicamento" onfocus="meds()" onblur="medn()">
           <label for="first_name center">Medicamento:</label>
         </div>
         <div class="input-field col s12">
-          <input name="fabricante" type="text" class="validate">
+          <input name="fabricante" type="text" class="validate" id="fabricante" onfocus="fabs()" onblur="fabn()">
           <label for="last_name">Fabricante:</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input name="data-de-compra" type="number" class="validate">
+          <input name="data-de-compra" type="number" class="validate" id="data-de-compra" onfocus="dats()" onblur="datn()">
           <label for="last_name">Data de Compra:</label>
         </div>
       </div>
     </form>
-    <a class="btn-floating btn-large waves-effect waves-light purple" onclick="cadastrar()"><i class="material-icons">add</i></a>
+    <button class="btn-floating btn-large waves-effect waves-light purple" id="botao-cadastrar"></button>
     
   </div>
  
 
   
-  <script src="/app/pages/cadastro.js"></script>
   <script src="/node_modules/jquery/dist/jquery.js"></script>
   <script src="/node_modules/materialize-css/dist/js/materialize.js"></script>
 

@@ -16,23 +16,23 @@ Funções
 - [x] Função anônima com argumento
 - [x] Função anônima sem argumento
 - [X] Função anônima com retorno
-- [x] Função auto-executável
+- [x] Função auto-executável - não será aceita a mesma do Module Pattern
 - [x] Função com nome
 - [x] Função aninhada/local - declarar uma função dentro de outra
-- [ ] Passagem de uma função como parâmetro
-- [ ] Função Flecha - Arrow Function
-
+- [ ] Passagem de uma função como parâmetro para outra função - ambas as funções precisam ser implementadas pelo aluno
+- [x] Função Flecha - Arrow Function
+ 
 Eventos
 
-- [ ] Evento de carregamento do documento - onload
+- [x] Evento de carregamento do documento - onload
 - [x] Evento de movimento do mouse
 - [x] Evento de teclado - usar charCode ou keyCode
-- [ ] Eventos de formulário - onfocus e onblur
-- [ ] Imprimir alguma propriedade do objeto event recebido como parâmetro
+- [x] Eventos de formulário - onfocus e onblur
+- [x] Imprimir alguma propriedade/atributo do objeto event recebido como parâmetro na função tratadora de evento
 
 Acesso aos elementos DOM do HTML
 
-- [x] Via referência DOM pelo id do elemento HTML
+- [x] Via referência DOM pelo id do elemento HTML - acesso sem uso do getElementByID ou querySelector, o id do objeto DOM é o próprio nome da variável
 - [x] Via getElementByID()
 - [x] Via getElementsByName()
 - [ ] Via getElementsByTagName()
@@ -40,22 +40,23 @@ Acesso aos elementos DOM do HTML
 
 Tratadores de Evento
 
-- [x] Especificar o tratador de evento inline
-- [ ] Especificar o tratador de evento no carregamento da página HTML no modo tradicional - no onload
-- [x] Especificar o tratador de evento no carregamento da página HTML com a função addEventListener - no onload
-- [ ] Usar o operador this em funções tratadoras de eventos.
+- [x] Especificar o tratador de evento inline - registro do evento no HTML
+- [x] Especificar o tratador de evento no modo tradicional - registro do evento no JS com prefixo on via atributo de um objeto DOM
+- [x] Especificar o tratador de evento com a função addEventListener - registro do evento no JS
+- [x] Usar o operador this em funções tratadoras de eventos.
 
 Objetos Nativos
 
 - [ ] Usar pelo menos 3 métodos de manipulação de array
 - [ ] Usar laço de repetição (for..in ou for..of ou forEach)
 - [ ] Usar pelo menos 3 métodos para manipulação de string
-- [ ] String Template
+- [x] String Template - a String com crase e ${}
+- [x]Manipulação do CSS de forma nativa via atributo style e classList
 
 Objetos
 
-- [x] Criar objeto usando função construtora ou notação literal
-- [ ] Criar objetos a partir da definição de classes do ES6
+- [ ] Criar objeto usando função construtora ou notação literal
+- [X] (Obrigatório) Criar objetos a partir da definição de classes do ES6 - a classe precisa ser definida em arquivo separado, sendo o nome do arquivo em letras minúsculas no estilo dashed-case e nome da classe em UpperCamelCase
 - [ ] Usar herança prototipal nativa ou herança de classes do ES6
 
 Qualidade do código

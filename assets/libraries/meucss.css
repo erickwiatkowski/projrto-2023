@@ -1,32 +1,8 @@
-.tamanho{
-	min-width:1000px;
-	overflow: hidden;
-    background-color: blue;
-}
-
-.topo1{
-    min-width:500px;
-	overflow: hidden;
-}
-
-.topo2{
-    min-width:500px;
-	overflow: auto;
-}
-
-#corTopo{
-    background-color: blue;
-    min-height: 50px;
-}
-
-#logo{
-    font-weight: 25px;
-}
- 
-#botoesTopo{
-    min-height: 40px;
-    max-height: 40px;
-    font-size: 10px;
-    text-align: center;
-
-}
+    /* estilos CSS aqui */
+      li {
+        margin-bottom: 10px;
+        color: red;
+      }
+      .produto-info {
+        font-weight: bold;
+      }

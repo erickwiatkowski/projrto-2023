@@ -8,12 +8,15 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="node_modules/materialize-css/dist/css/materialize.css" >
   <link rel="stylesheet" href="assets/libraries/meucss.css">
+  <style>
+    
+  </style>
 </head>
 <body>
   
   <nav class="nav-extended">
     <div class="nav-wrapper blue lighten-3">
-      <a href="#!" class="brand-logo">Farma EKL</a>
+      <a href="#!" class="brand-logo" >Farma EKL</a>
     </div>
     <div class="nav-content">
       <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal" href="app/pages/cadasto.html">
@@ -27,42 +30,16 @@
     </div>
   </nav>
 
- <div id="sistemadev"></div>
+ <div style="color: red;" id="sistemadev"></div>
 
- <button id="myButton" class="blue">Posição do mouse</button>
- <button id="tempo" class="blue">Posição do mouse</button>
-  <ul id="lista-produtos"></ul>
-  <table>
-    <thead>
-      <tr>
-          <th>Name</th>
-          <th>Item Name</th>
-          <th>Item Price</th>
-      </tr>
-    </thead>
+ <button id="mause" onclick="this.classList.add('purple')" ondblclick="this.classList.remove('purple')">Posição do mouse</button>
+ <button id="tempo" class="blue"> Tempo de uso</button>
+  
+ <ul id="lista-produtos"></ul>
+  
 
-    <tbody>
-      <tr>
-        <td>Alvin</td>
-        <td>Eclair</td>
-        <td>$0.87</td>
-        <td>$0.87</td>
-      </tr>
-      <tr>
-        <td>Alan</td>
-        <td>Jellybean</td>
-        <td>$3.76</td>
-      </tr>
-      <tr>
-        <td>Jonathan</td>
-        <td>Lollipop</td>
-        <td>$7.00</td>
-      </tr>
-    </tbody>
-  </table>
-
- <script src="/assets/index.js"></script>
-  <script src="app/pages/cadastro.js"></script>
+ <script src="assets/index.js"></script>
+ <script type="module" src="app/model/medicamento.js"></script>
   <script src="node_modules/jquery/dist/jquery.js"></script>
   <script src="node_modules/materialize-css/dist/js/materialize.js"></script>
 
