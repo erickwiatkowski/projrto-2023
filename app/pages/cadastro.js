@@ -1,7 +1,8 @@
 import { Medicamento } from "../model/medicamento.js";
 
 let usuario = prompt("Insira seu nome: ");
-let acesso = usuario.toUpperCase();
+let usuariosemespaco = usuario.trim()
+let acesso = usuariosemespaco.toUpperCase();
 if (acesso === 'ERIC') {
   alert('Bem vindo !!!')
   
@@ -13,11 +14,15 @@ if (acesso === 'ERIC') {
 
   function cadastrar() {
        let newmedicamento = document.getElementsByName("medicamento")[0].value;
+       let medicamento = newmedicamento.charAt(0).toUpperCase() + newmedicamento.slice(1);
     let newfabricante = document.getElementsByName("fabricante")[0].value;
+    let fabricante = newfabricante.charAt(0).toUpperCase() + newfabricante.slice(1);
     let newcompra = document.getElementsByName("data-de-compra")[0].value;
-    let newProduto = new Medicamento(newmedicamento, newfabricante, newcompra);
+    let newProduto = new Medicamento(medicamento, fabricante, newcompra);
     // Adiciona o objeto no array de produtos
     produtos.push(newProduto);
+
+    
 
     // Salva o array no localStorage
     localStorage.setItem("produtos", JSON.stringify(produtos));
@@ -36,5 +41,3 @@ if (acesso === 'ERIC') {
   alert('Usuário não possui acesso a esta aba')
   window.location.href = "/index.html";
 }
-
- // Exibe os produtos cadastrados ao carregar a página

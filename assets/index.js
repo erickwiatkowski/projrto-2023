@@ -37,5 +37,11 @@ document.addEventListener('mousemove', function(rato) {
         console.log(tecla.type)
     }; 
   });
+
+var links = document.getElementsByTagName("a");
+for (var i = 0; i < links.length; i++) {
+  links[i].classList.add("blue");
+  links[i].classList.add("lighten-2");
+}
  
   

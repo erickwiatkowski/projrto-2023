@@ -1,8 +1,8 @@
 export class Medicamento {
-    constructor(medicamento, fabricante, datadecompra) {
+    constructor(medicamento, fabricante, data) {
         this.medicamento = medicamento;
         this.fabricante = fabricante;
-        this.datadecompra = datadecompra;
+        this.data = data;
     }
 }
 
@@ -10,11 +10,13 @@ export class Medicamento {
 let produtos = JSON.parse(localStorage.getItem("produtos")) || [];
 
 window.onload = function() {
-    let listaProdutos = document.getElementById("lista-produtos");
-    for (let i = 0; i < produtos.length; i++) {
-      let produto = produtos[i];
-      let listItem = document.createElement("li");
-      let produtoInfo = document.createTextNode(produto.medicamento + " - " + produto.fabricante + " - " + produto.dataCompra);
-      listItem.appendChild(produtoInfo);
-      listaProdutos.appendChild(listItem);
-    }}
+    const listaProdutos = document.getElementById("lista-produtos");
+produtos.forEach(produto => {
+  let listItem = document.createElement("li");
+  let produtoInfo = document.createTextNode(`${produto.medicamento} - ${produto.fabricante} - ${produto.data}`);
+  listItem.appendChild(produtoInfo);
+  listaProdutos.appendChild(listItem);
+});
+}
+
+console.log(produtos.length);

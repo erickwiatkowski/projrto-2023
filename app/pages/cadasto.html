@@ -9,8 +9,7 @@
   <link rel="stylesheet" href="/node_modules/materialize-css/dist/css/materialize.css" >
   <script src="/app/pages/new.js"></script>
   
-  <script type="module" src="/app/model/medicamento.js"></script>
-  <script type="module" src="/app/pages/cadastro.js"></script>
+
 </head>
 <body>
   
@@ -34,17 +33,18 @@
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input name="data-de-compra" type="number" class="validate" id="data-de-compra" onfocus="dats()" onblur="datn()">
+          <input name="data-de-compra" type="text" class="validate" id="data-de-compra" onfocus="dats()" onblur="datn()">
           <label for="last_name">Data de Compra:</label>
         </div>
       </div>
     </form>
-    <button class="btn-floating btn-large waves-effect waves-light purple" id="botao-cadastrar"></button>
+    <button class="btn-floating btn-large waves-effect waves-light purple" id="botao-cadastrar"><i class="material-icons" >add</i></button>
     
   </div>
  
 
-  
+  <script type="module" src="/app/model/medicamento.js"></script>
+  <script type="module" src="/app/pages/cadastro.js"></script>
   <script src="/node_modules/jquery/dist/jquery.js"></script>
   <script src="/node_modules/materialize-css/dist/js/materialize.js"></script>
 
