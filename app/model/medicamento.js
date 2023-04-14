@@ -18,5 +18,3 @@ produtos.forEach(produto => {
   listaProdutos.appendChild(listItem);
 });
 }
-
-console.log(produtos.length);
