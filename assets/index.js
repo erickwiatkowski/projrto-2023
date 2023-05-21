@@ -1,12 +1,13 @@
-
+"use strict";
 (function(){
     let tempodeuso = 0;
     let tempo = document.querySelector('#tempo');
-    setInterval(function(){
-        tempodeuso++;
-        tempo.textContent = tempodeuso + ` segundos`;
-        
-    }, 1000)
+    let teFuncao = function(){
+      tempodeuso++;
+      tempo.textContent = tempodeuso + ` segundos`;
+      
+  }
+    setInterval( teFuncao , 1000)
   })();
 
   function imprimirValor(event) {
@@ -18,9 +19,9 @@ setTimeout( function (){
     sistema.innerHTML  = 'Sistema desenvolvido pela Ek desenvolvimentos';
 }, 2000);
 
-document.addEventListener('mousemove', function(rato) {
-    const x = rato.pageX;
-    const y = rato.pageY;
+document.addEventListener('mousemove', function(e) {
+    const x = e.pageX;
+    const y = e.pageY;
 
     const button = document.getElementById('mause');
     button.textContent = `Posição do mouse: X=${x}px, Y=${y}px`;
@@ -38,8 +39,8 @@ document.addEventListener('mousemove', function(rato) {
     }; 
   });
 
-var links = document.getElementsByTagName("a");
-for (var i = 0; i < links.length; i++) {
+let links = document.getElementsByTagName("a");
+for (let i = 0; i < links.length; i++) {
   links[i].classList.add("blue");
   links[i].classList.add("lighten-2");
 }

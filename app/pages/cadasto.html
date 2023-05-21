@@ -9,36 +9,50 @@
   <link rel="stylesheet" href="/node_modules/materialize-css/dist/css/materialize.css" >
   <script src="/app/pages/new.js"></script>
   
-
+  <style>
+    input:valid + span::after {
+      content: "✓";
+      color: green;
+      margin-left: 5px;
+    }
+  
+    input:invalid + span::after {
+      content: "Prenchimeto incorreto";
+      color: red;
+      margin-left: 5px;
+    }
+  </style>
 </head>
 <body>
   
   <nav class="nav-extended">
     <div class="nav-wrapper blue lighten-3">
-      <a href="#" class="brand-logo center">Farma ELK</a>
+      <a href="#" class="brand-logo center">FarmaTec</a>
     </div>
   </nav>
 
   <div class="row container">
     <form class="col s12">
-      <div class="row">
-        <div class="input-field col s12 center">
-          <input placeholder="Placeholder" name="medicamento" type="text" class="validate" id="medicamento" onfocus="meds()" onblur="medn()">
-          <label for="first_name center">Medicamento:</label>
-        </div>
-        <div class="input-field col s12">
-          <input name="fabricante" type="text" class="validate" id="fabricante" onfocus="fabs()" onblur="fabn()">
-          <label for="last_name">Fabricante:</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input name="data-de-compra" type="text" class="validate" id="data-de-compra" onfocus="dats()" onblur="datn()">
-          <label for="last_name">Data de Compra:</label>
-        </div>
-      </div>
+      
+      
     </form>
-    <button class="btn-floating btn-large waves-effect waves-light purple" id="botao-cadastrar"><i class="material-icons" >add</i></button>
+    
+<form>
+  <label for="medicamento">Medicamento:</label>
+  <input placeholder="Insira o nome do medicamento" name="medicamento" type="text" class="validate" id="medicamento" onfocus="meds()" onblur="medn()" pattern="[A-Za-z]+" required>
+  <span></span>
+  
+  <label for="fabricante">Fabricante:</label>
+  <input  name="fabricante" type="text" class="validate" id="fabricante" onfocus="fabs()" onblur="fabn()" pattern="[A-Za-z]+" required>
+  <span></span>
+  
+  <label for="data-de-compra">Data de Compra:</label>
+  <input name="data-de-compra" type="number" min="0" max="9999" class="validate" id="data-de-compra"  onfocus="dats()" onblur="datn()" required>
+  <span></span>
+  
+  
+</form>
+    <button type="submit" class="btn-floating btn-large waves-effect waves-light purple" id="botao-cadastrar"><i class="material-icons" >add</i></button>
     
   </div>
  

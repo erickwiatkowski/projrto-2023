@@ -9,9 +9,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "eslint-config-airbnb": "^19.0.4",
     "jquery": "^3.6.3",
     "materialize-css": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.39.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "jshint": "^2.13.6"
   }
 }
-
-
