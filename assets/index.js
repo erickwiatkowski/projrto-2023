@@ -1,4 +1,4 @@
-"use strict";
+  'use strict';
 (function(){
     let tempodeuso = 0;
     let tempo = document.querySelector('#tempo');
@@ -6,11 +6,11 @@
       tempodeuso++;
       tempo.textContent = tempodeuso + ` segundos`;
       
-  }
-    setInterval( teFuncao , 1000)
+  };
+    setInterval(teFuncao , 1000);
   })();
 
-  function imprimirValor(event) {
+  function imprimirValor(event){
     console.log(event.target.value);
   }
   // parte de baixo do arquivo
@@ -30,19 +30,19 @@ document.addEventListener('mousemove', function(e) {
 
   document.addEventListener('keypress', function(tcl) {
     if (tcl.charCode === 112) { 
-      window.location.href = "/app/pages/cadasto.html";
+      window.location.href = '/app/pages/cadasto.html';
     }
   });
-  document.addEventListener("keydown", function (tecla){
+  document.addEventListener('keydown', function (tecla){
     if(tecla.keyCode === 13){
-        console.log(tecla.type)
-    }; 
+        console.log(tecla.type);
+    } 
   });
 
-let links = document.getElementsByTagName("a");
+let links = document.getElementsByTagName('a');
 for (let i = 0; i < links.length; i++) {
-  links[i].classList.add("blue");
-  links[i].classList.add("lighten-2");
+  links[i].classList.add('blue');
+  links[i].classList.add('lighten-2');
 }
  
   
