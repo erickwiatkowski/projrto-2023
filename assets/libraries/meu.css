@@ -1,8 +1,8 @@
     /* estilos CSS aqui */
-      li {
-        margin-bottom: 10px;
-        color: red;
+      h1 {
+        text-emphasis-color: red;
       }
       .produto-info {
         font-weight: bold;
       }
+

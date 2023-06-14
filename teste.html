@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Busca de CEP</title>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var btnBuscar = document.getElementById("btnBuscar");
+      btnBuscar.addEventListener("click", function() {
+        var cep = document.getElementById("inputCEP").value;
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://viacep.com.br/ws/" + cep + "/json/");
+        xhr.onload = function() {
+          if (xhr.status === 200) {
+            var response = JSON.parse(xhr.responseText);
+            document.getElementById("logradouro").textContent = response.logradouro;
+          } else {
+            console.log("Erro na requisição. Status: " + xhr.status);
+            document.getElementById("logradouro").textContent = "";
+          }
+        };
+        xhr.onerror = function() {
+          console.log("Erro na requisição. Verifique sua conexão de internet.");
+        };
+        xhr.send();
+      });
+    });
+  </script>
+</head>
+<body>
+
+  <h2>Dados do CEP:</h2>
+
+  <p><strong>Logradouro:</strong> <span id="logradouro"></span></p>
+</body>
+</html>

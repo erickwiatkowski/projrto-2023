@@ -1,11 +1,12 @@
   'use strict';
+  
 (function(){
     let tempodeuso = 0;
     let tempo = document.querySelector('#tempo');
     let teFuncao = function(){
       tempodeuso++;
       tempo.textContent = tempodeuso + ` segundos`;
-      
+      ('#boas-vindas').removeClass('blue');
   };
     setInterval(teFuncao , 1000);
   })();
@@ -45,4 +46,5 @@ for (let i = 0; i < links.length; i++) {
   links[i].classList.add('lighten-2');
 }
  
+
   
