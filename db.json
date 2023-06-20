@@ -1,9 +1,100 @@
 {
-"produtos":[
+  "produtos": [
     {
-        "id": 1,
-        "tipo": "rteste"
+      "id": 1,
+      "medicamento": "Paracetamol",
+      "fabricante": "Farmacom",
+      "data": "2022-05-15"
+    },
+    {
+      "id": 2,
+      "medicamento": "Ibuprofeno",
+      "fabricante": "PharmaLife",
+      "data": "2022-06-20"
+    },
+    {
+      "medicamento": "Paracetamo",
+      "fabricante": "Farmavida",
+      "data": "1234",
+      "id": 3
+    },
+    {
+      "medicamento": "Paracetamo",
+      "fabricante": "Vicopharma",
+      "data": "1234",
+      "id": 4
+    },
+    {
+      "medicamento": "Ggg",
+      "fabricante": "Gggggg",
+      "data": "1234",
+      "id": 5
+    },
+    {
+      "medicamento": "Paracetamo",
+      "fabricante": "Vicopharma",
+      "data": "1234",
+      "id": 6
+    },
+    {
+      "medicamento": "Paracetamo",
+      "fabricante": "Vicopharma",
+      "data": "1234",
+      "id": 7
+    },
+    {
+      "medicamento": "Dipirona",
+      "fabricante": "Vicopharma",
+      "data": "1234",
+      "id": 8
+    },
+    {
+      "medicamento": "Dipirona",
+      "fabricante": "Dw",
+      "data": "1234",
+      "id": 9
+    },
+    {
+      "medicamento": "Eerr",
+      "fabricante": "Vicopharma",
+      "data": "1234",
+      "id": 10
+    },
+    {
+      "medicamento": "Paracetamo",
+      "fabricante": "Vicopharma",
+      "data": "1234",
+      "id": 11
+    },
+    {
+      "medicamento": "Paracetamo",
+      "fabricante": "Vicopharma",
+      "data": "1234",
+      "id": 12
+    },
+    {
+      "medicamento": "Dipirona",
+      "fabricante": "Vicopharma",
+      "data": "1234",
+      "id": 13
+    },
+    {
+      "medicamento": "Paracetamo",
+      "fabricante": "Vicopharma",
+      "data": "1234",
+      "id": 14
+    },
+    {
+      "medicamento": "Paracetamo",
+      "fabricante": "Vicopharma",
+      "data": "1234",
+      "id": 15
+    },
+    {
+      "medicamento": "Paracetamo",
+      "fabricante": "Vicopharma",
+      "data": "1234",
+      "id": 16
     }
-]
-
+  ]
 }

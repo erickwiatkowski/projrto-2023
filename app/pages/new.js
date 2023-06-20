@@ -6,9 +6,12 @@ function meds(){
 function medn(){
    document.getElementById('medicamento').classList.remove('blue');}
 
-function fabs() {   
-  document.getElementById('fabricante').classList.add('blue');
-  document.getElementById('fabricante').classList.add('lighten-4');}
+   document.getElementById('fabricante').onfocus = function(){
+      this.classList.add('blue');
+   } 
+  
+  document.getElementById('fabricante').classList.add('lighten-4');
+
 function fabn(){
    document.getElementById('fabricante').classList.remove('blue');}
 

@@ -85,9 +85,9 @@ Formulário
 jQuery
 
 - [x] Uso de seletores CSS - id, classe e tag
-- [ ] Uso de seletores hierárquicos estáticos - ancestral/descendente, pai/filho, anterior/próximo
-- [ ] Uso de seletores hierárquicos dinâmicos - parent/children/next
-- [ ] Efeitos fade ou slide
+- [x] Uso de seletores hierárquicos estáticos - ancestral/descendente, pai/filho, anterior/próximo
+- [x] Uso de seletores hierárquicos dinâmicos - parent/children/next
+- [x] Efeitos fade ou slide
 - [x] Especificar o tratador de algum evento via jQuery
 - [ ] Manipulação do CSS via função css() e addClass()/removeClass()
 - [ ] Manipulação do conteúdo de um input e div usando jQuery
@@ -95,12 +95,12 @@ jQuery
 
 Web Storage
 
-- [ ] Leitura e escrita de dados simples - dados primivos como string, number, boolea
+- [x] Leitura e escrita de dados simples - dados primivos como string, number, boolea
 - [x] Leitura e escrita de JSON - dado transformado a partir de um objeto
-- [ ] Criar e guardar um dado em um Cookie
+- [x] Criar e guardar um dado em um Cookie
 
 Ajax com Backend
 
 - [ ] Requisições AJAX para uma implementação funcional do backend em ExpressJS na plataforma Node
-- [ ] (Obrigatório) Requisições AJAX para uma API Fake - JSON Server 
+- [x] (Obrigatório) Requisições AJAX para uma API Fake - JSON Server 
 - [ ] Requisições AJAX para uma API Rest pública qualquer (Busca CEP API ou IBGE API ou outra).

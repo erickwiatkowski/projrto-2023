@@ -7,7 +7,7 @@
   <title>Document</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="/node_modules/materialize-css/dist/css/materialize.css" >
-  <script src="/app/pages/new.js"></script>
+  
   
   <style>
     input:valid + span::after {
@@ -38,7 +38,7 @@
       
     </form>
     
-<form>
+<form id="cadastro-form" action="">
   <label for="medicamento">Medicamento:</label>
   <input placeholder="Insira o nome do medicamento" name="medicamento" type="text" class="validate" id="medicamento" onfocus="meds()" onblur="medn()" pattern="[A-Za-z]+" required>
   <span></span>
@@ -51,17 +51,19 @@
   <input name="data-de-compra" type="number" min="0" max="9999" class="validate" id="data-de-compra"  onfocus="dats()" onblur="datn()" required>
   <span></span>
   
-  
+  <button type="submit" class="btn-floating btn-large waves-effect waves-light purple" id="botao-cadastrar"><i class="material-icons" >add</i></button>
 </form>
-    <button type="submit" class="btn-floating btn-large waves-effect waves-light purple" id="botao-cadastrar"><i class="material-icons" >add</i></button>
+    
     
   </div>
  
 
-  <script type="module" src="/app/model/medicamento.js"></script>
-  <script type="module" src="/app/pages/cadastro.js"></script>
+
   <script src="/node_modules/jquery/dist/jquery.js"></script>
   <script src="/node_modules/materialize-css/dist/js/materialize.js"></script>
+  <script type="module" src="/app/model/medicamento.js"></script>
+  <script type="module" src="/app/pages/cadastro.js"></script>
+  <script src="/app/pages/new.js"></script>
 
 </body>
 </html>

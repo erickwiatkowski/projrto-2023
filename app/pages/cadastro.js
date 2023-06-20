@@ -9,55 +9,64 @@ if (acesso === 'ERIC') {
 
   let produtos = JSON.parse(localStorage.getItem('produtos')) || [];
 
-  let botaoCadastrar = document.getElementById('botao-cadastrar');
-  
-  botaoCadastrar.addEventListener('click', validar);
-  $(document).ready(function() {
-    $('data-de-compra').mask('00/00/0000');
-  });
-function validar(){
-  let newmedicamento = document.getElementsByName('medicamento')[0].value;
-  let newfabricante = document.getElementsByName('fabricante')[0].value;
-  let newcompra = document.getElementsByName('data-de-compra')[0].value;
+  let cadastroForm = document.getElementById('cadastro-form');
 
-  if(newmedicamento === ' ' || newmedicamento === ''){
-    window.alert('Campo do nome é invalido');
-    return false;
+  cadastroForm.addEventListener('submit', validar);
+
+  function validar(e) {
+    e.preventDefault();
+    let newmedicamento = document.getElementsByName('medicamento')[0].value;
+    let newfabricante = document.getElementsByName('fabricante')[0].value;
+    let newcompra = document.getElementsByName('data-de-compra')[0].value;
+
+    if (newmedicamento.trim() === '') {
+      window.alert('Campo do nome é inválido');
+      return false;
+    }
+    if (newfabricante.trim() === '') {
+      window.alert('Campo do fabricante é inválido');
+      return false;
+    }
+    if (newcompra.trim() === '') {
+      window.alert('Campo do data de compra é inválido');
+      return false;
+    }
+
+    cadastrar();
+    return true;
   }
-  if(newfabricante === ' ' || newfabricante === ''){
-    window.alert('Campo do fabricante é invalido');
-    return false;
-  }
-  if(newcompra === ' ' || newcompra === '' ){
-    window.alert('Campo do data de compra é invalido');
-    return false;
-  }
-  cadastrar();
-  return true;
-}
-function cadastrar(){{
-  let newmedicamento = document.getElementsByName('medicamento')[0].value;
-  let newfabricante = document.getElementsByName('fabricante')[0].value;
-  let newcompra = document.getElementsByName('data-de-compra')[0].value;
-  let medicamento = newmedicamento.charAt(0).toUpperCase() + newmedicamento.slice(1);
-  let fabricante = newfabricante.charAt(0).toUpperCase() + newfabricante.slice(1);
-  let newProduto = new Medicamento(medicamento, fabricante, newcompra);
+
+  function cadastrar() {
+    let newmedicamento = document.getElementsByName('medicamento')[0].value;
+    let newfabricante = document.getElementsByName('fabricante')[0].value;
+    let newcompra = document.getElementsByName('data-de-compra')[0].value;
+    let medicamento = newmedicamento.charAt(0).toUpperCase() + newmedicamento.slice(1);
+    let fabricante = newfabricante.charAt(0).toUpperCase() + newfabricante.slice(1);
+    let newProduto = new Medicamento(medicamento, fabricante, newcompra);
 
     produtos.push(newProduto);
-  }
-    
+
     // Salva o array no localStorage
     localStorage.setItem('produtos', JSON.stringify(produtos));
 
-    window.alert('Medicamento cadastrado com sucesso ! ');
-    if (window.confirm('deseja cadastrar um novo produto')) { 
-      window.location.href ='cadasto.html';
-    } else {
-      setTimeout(() => {
-        window.location.href = '/index.html';
-      }, 3000);
-    }
-  }} else {
-    window.alert('Usuário não possui acesso a esta aba');
-  window.location.href = '/index.html';
+    // Faz a requisição POST para o JSON Server
+    fetch('http://localhost:3000/produtos', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newProduto),
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Medicamento cadastrado com sucesso!');
+      window.location.href = '../../index.html'; // Redireciona para a página inicial
+    })
+    .catch(error => {
+      console.error('Erro ao cadastrar o medicamento:', error);
+    });
+  }
+} else {
+  window.alert('Usuário não possui acesso a esta aba');
+  window.location.href = '../../index.html';
 }
