@@ -1,16 +1,18 @@
 'use strict';
 // funcoes de onfocus e onblur
-function meds(){  
-    document.getElementById('medicamento').classList.add('blue');
-    document.getElementById('medicamento').classList.add('lighten-4');}
-function medn(){
-   document.getElementById('medicamento').classList.remove('blue');}
+function meds() {
+   $('#medicamento').addClass('blue lighten-4');
+ }
+ 
+ function medn() {
+   $('#medicamento').removeClass('blue');
+ }
 
    document.getElementById('fabricante').onfocus = function(){
       this.classList.add('blue');
+      this.classList.add('lighten-4');
    } 
   
-  document.getElementById('fabricante').classList.add('lighten-4');
 
 function fabn(){
    document.getElementById('fabricante').classList.remove('blue');}

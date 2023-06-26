@@ -7,9 +7,6 @@ export class Medicamento{
     }
 }
 
-
-let produtos = JSON.parse(localStorage.getItem('produtos')) || [];
-
 window.onload = function() {
   fetch('db.json')
     .then(response => response.json())
