@@ -50,7 +50,7 @@ if (acesso === 'ERIC') {
     localStorage.setItem('produtos', JSON.stringify(produtos));
 
     // Faz a requisição POST para o JSON Server
-    fetch('http://localhost:3000/produtos', {
+    fetch('https://erickwiatkowski.github.io/projrto-2023/db.json', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ if (acesso === 'ERIC') {
     .then(response => response.json())
     .then(data => {
       console.log('Medicamento cadastrado com sucesso!');
-      window.location.href = '../../index.html'; // Redireciona para a página inicial
+      window.location.href = 'https://erickwiatkowski.github.io/projrto-2023/'; // Redireciona para a página inicial
     })
     .catch(error => {
       console.error('Erro ao cadastrar o medicamento:', error);
@@ -68,5 +68,5 @@ if (acesso === 'ERIC') {
   }
 } else {
   window.alert('Usuário não possui acesso a esta aba');
-  window.location.href = '../../index.html';
+  window.location.href = 'https://erickwiatkowski.github.io/projrto-2023/';
 }
