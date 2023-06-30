@@ -1,16 +1,17 @@
   'use strict';
   
-(function(){
+  (function() {
     let tempodeuso = 0;
-    let tempo = document.querySelector('#tempo');
-    let teFuncao = function(){
+    let teFuncao = function() {
       tempodeuso++;
-      tempo.textContent = tempodeuso + ` segundos`;
-  };
-    setInterval(teFuncao , 1000);
+      let tempo = tempodeuso + ` segundos`;
+      document.getElementById('usox').innerHTML = tempo;
+    };
+    setInterval(teFuncao, 1000);
   })();
 
-  function imprimirValor(event){
+  
+ function imprimirValor(event){
     console.log(event.target.value);
   }
   function slideUpElement() {
@@ -23,12 +24,39 @@
 setTimeout( function (){
     let sistema= window.sistemadev;
     sistema.innerHTML  = 'Sistema desenvolvido pela Ek desenvolvimentos';
- $('.rodape > h5').css('font-weight', 'bold');
- const atual = document.querySelector('.cook');
+  const atual = document.querySelector('.cook');
  const proximo = atual.nextElementSibling;
  proximo.classList.add('blue');
  proximo.classList.add('lighten-4');
-}, 2000);
+
+ $('.rodape > h5').css('font-weight', 'bold');
+ $('div + p').css('color', 'blue');
+ $('div button').css('color', 'purple');
+ $('#cookies').parent().css('background-color', '#bbdefb');
+ $('#topo').next().css('background-color', '#e1f5fe');
+ $('#botoes-rodape').children().css('background-color', '#64b5f6');
+ 
+ $('#apagar').on('click', function() {
+  // Código a ser executado quando o mouse passar sobre o elemento
+  $(this).css('background-color', 'red');
+});
+let clicks = 0;
+$('#apagar').on('dblclick', function() {
+  clicks++;
+  if (clicks === 2) {
+    $(this).css('background-color', 'blue'); // Exemplo: Alterando a cor de fundo para vermelho
+    clicks = 0; // Reinicia o contador de cliques
+  }});
+
+ let dataAtual = new Date();
+ let hora = dataAtual.getHours();
+ let minutos = dataAtual.getMinutes();
+ let segundos = dataAtual.getSeconds();
+
+ let mensagem = 'sistema iniciado ' + hora + ':' + minutos + ':' + segundos + ';';
+ localStorage.setItem('chave', mensagem);
+ console.log('sistema ok');
+}, 500);
 
 
 

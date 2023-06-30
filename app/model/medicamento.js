@@ -7,16 +7,16 @@ export class Medicamento{
     }
 }
 
-window.onload = function() {
-  fetch('db.json')
+window.onload = function () {
+  fetch('http://localhost:3000/produtos')
     .then(response => response.json())
     .then(data => {
-      const produtos = data.produtos || [];
+      const produtos = data || [];
       let html = '';
       produtos.forEach(produto => {
         html += `
           <div class="row">
-            <div class="col s5 m5">
+            <div class="col s12 m12">
               <div class="card blue-grey darken-1">
                 <div class="card-content white-text">
                   <span class="card-title">${produto.medicamento}</span>
@@ -33,12 +33,4 @@ window.onload = function() {
     .catch(error => {
       console.error('Error fetching data:', error);
     });
-
-document.getElementById('lista-produto').innerHTML = html;
 };
-// <h4>${produto.medicamento} - ${produto.fabricante} - ${produto.data}</h4>
-//let listItem = document.createElement('li');
-  //let produtoInfo = document.createTextNode
-  //(`${produto.medicamento} - ${produto.fabricante} - ${produto.data}`);
-  //listItem.appendChild(produtoInfo);
-//  listaProdutos.appendChild(listItem);
