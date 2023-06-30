@@ -1,5 +1,5 @@
 'use strict';
-import { Medicamento } from "../model/medicamento.js";
+import { Medicamento } from "https://erickwiatkowski.github.io/projrto-2023/app/model/medicamento.js";
 
 let usuario = window.prompt('Insira seu nome: ');
 let usuariosemespaco = usuario.trim();
