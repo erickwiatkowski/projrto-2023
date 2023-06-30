@@ -50,7 +50,7 @@ if (acesso === 'ERIC') {
     localStorage.setItem('produtos', JSON.stringify(produtos));
 
     // Faz a requisição POST para o JSON Server
-    fetch('https://erickwiatkowski.github.io/projrto-2023/db.json', {
+    fetch('https://my-json-server.typicode.com/erickwiatkowski/projrto-2023/produtos', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
