@@ -4,7 +4,7 @@ import { Medicamento } from "https://erickwiatkowski.github.io/projrto-2023/app/
 let usuario = window.prompt('Insira seu nome: ');
 let usuariosemespaco = usuario.trim();
 let acesso = usuariosemespaco.toUpperCase();
-if (acesso === 'ERIC') {
+if (acesso === 'ERIC'  || 'LETICIA') {
   window.alert('Bem vindo !!!');
 
   let produtos = JSON.parse(localStorage.getItem('produtos')) || [];
