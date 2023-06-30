@@ -13,6 +13,7 @@ window.onload = function () {
     .then(data => {
       const produtos = data || [];
       let html = '';
+        if (Array.isArray(produtos)) {
       produtos.forEach(produto => {
         html += `
           <div class="row">
@@ -27,7 +28,10 @@ window.onload = function () {
             </div>
           </div>
         `;
-      });
+      });  });
+} else {
+  console.error('Error fetching data: produtos is not an array');
+}
       document.getElementById('lista-produto').innerHTML = html;
     })
     .catch(error => {
