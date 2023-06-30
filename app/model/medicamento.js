@@ -8,7 +8,7 @@ export class Medicamento{
 }
 
 window.onload = function () {
-  fetch('http://localhost:3000/produtos')
+  fetch('https://erickwiatkowski.github.io/projrto-2023/db.json')
     .then(response => response.json())
     .then(data => {
       const produtos = data || [];
