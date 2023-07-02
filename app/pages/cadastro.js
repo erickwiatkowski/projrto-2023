@@ -1,10 +1,10 @@
 'use strict';
-import { Medicamento } from "../model/medicamento.js";
+import { Medicamento } from "https://erickwiatkowski.github.io/projrto-2023/app/model/medicamento.js";
 
 let usuario = window.prompt('Insira seu nome: ');
 let usuariosemespaco = usuario.trim();
 let acesso = usuariosemespaco.toUpperCase();
-if (acesso === 'ERIC') {
+if (acesso === 'ERIC'  || 'LE') {
   window.alert('Bem vindo !!!');
   $(document).ready(function() {
     // Aplicar a máscara de data no campo desejado usando o plugin
@@ -74,7 +74,7 @@ fetch(`https://viacep.com.br/ws/${cep}/json/`)
     localStorage.setItem('produtos', JSON.stringify(produtos));
 
     // Faz a requisição POST para o JSON Server
-    fetch('http://localhost:3000/produtos', {
+    fetch('https://my-json-server.typicode.com/erickwiatkowski/projrto-2023/produtos', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -84,7 +84,7 @@ fetch(`https://viacep.com.br/ws/${cep}/json/`)
     .then(response => response.json())
     .then(data => {
       console.log('Medicamento cadastrado com sucesso!');
-      window.location.href = '../../index.html'; // Redireciona para a página inicial
+      window.location.href = 'https://erickwiatkowski.github.io/projrto-2023/'; // Redireciona para a página inicial
     })
     .catch(error => {
       console.error('Erro ao cadastrar o medicamento:', error);
@@ -92,5 +92,5 @@ fetch(`https://viacep.com.br/ws/${cep}/json/`)
   }
 } else {
   window.alert('Usuário não possui acesso a esta aba');
-  window.location.href = '../../index.html';
+  window.location.href = 'https://erickwiatkowski.github.io/projrto-2023/';
 }
