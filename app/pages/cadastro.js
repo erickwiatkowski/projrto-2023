@@ -26,7 +26,7 @@ if (acesso === 'ERIC'  || 'LE') {
     let newlink = document.getElementsByName('link')[0].value;
     let newdescricao = document.getElementsByName('descricao')[0].value;
     let cep = document.getElementsByName('cep')[0].value;
-    let cidade = 'Cidade não identificada';
+    let cidade = '';
     let egenerico = 'Medicamento não é generico';
     const meuCheckbox = document.querySelector('#egenerico');
         const isChecked = meuCheckbox.checked;
@@ -35,16 +35,7 @@ if (acesso === 'ERIC'  || 'LE') {
         } else {
           egenerico = 'Medicamento não é generico';;}
 
-fetch(`https://viacep.com.br/ws/${cep}/json/`)
-    .then(response => response.json())
-    .then(data => {
-      if (data.cep) {
-      cidade= ` ${data.localidade}`; 
-            } else {
-              cidade('CEP não encontrado ou inválido.');} })
-          .catch(error => {
-            console.error('Erro:', error);
-          });
+    
 
     if (newmedicamento.trim() === '') {
       window.alert('Campo do nome é inválido');
@@ -58,9 +49,23 @@ fetch(`https://viacep.com.br/ws/${cep}/json/`)
       window.alert('Campo do data de compra é inválido');
       return false;
     }
+   
+  fetch(`https://viacep.com.br/ws/${cep}/json/`)
+  .then(response => response.json())
+  .then(data => {
+    if (data.cep) {
+      cidade = ` ${data.localidade}`; 
+      cadastrar(newmedicamento, newfabricante, newcompra, newimagem, newlink, newdescricao, egenerico, cidade);
+    } else {
+      cidade = 'CEP não encontrado ou inválido.';
+      cadastrar(newmedicamento, newfabricante, newcompra, newimagem, newlink, newdescricao, egenerico, cidade);
 
-    cadastrar(newmedicamento, newfabricante, newcompra, newimagem, newlink, newdescricao, egenerico, cidade);
-    return true;
+    }
+  })
+  .catch(error => {
+    console.error('Erro:', error);
+  });
+  return true;
   }
 
   function cadastrar(newmedicamento, newfabricante, newcompra, newimagem, newlink, newdescricao, egenerico, cidade) {
@@ -74,7 +79,7 @@ fetch(`https://viacep.com.br/ws/${cep}/json/`)
     localStorage.setItem('produtos', JSON.stringify(produtos));
 
     // Faz a requisição POST para o JSON Server
-    fetch('https://my-json-server.typicode.com/erickwiatkowski/projrto-2023/produtos', {
+    fetch('http://localhost:3000/produtos', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -84,7 +89,7 @@ fetch(`https://viacep.com.br/ws/${cep}/json/`)
     .then(response => response.json())
     .then(data => {
       console.log('Medicamento cadastrado com sucesso!');
-      window.location.href = 'https://erickwiatkowski.github.io/projrto-2023/'; // Redireciona para a página inicial
+      window.location.href = '../../index.html'; // Redireciona para a página inicial
     })
     .catch(error => {
       console.error('Erro ao cadastrar o medicamento:', error);
@@ -92,5 +97,5 @@ fetch(`https://viacep.com.br/ws/${cep}/json/`)
   }
 } else {
   window.alert('Usuário não possui acesso a esta aba');
-  window.location.href = 'https://erickwiatkowski.github.io/projrto-2023/';
+  window.location.href = '../../index.html';
 }
