@@ -1,148 +1,35 @@
 {
   "produtos": [
     {
-      "id": 1,
-      "medicamento": "Paracetamol",
-      "fabricante": "Farmacom",
-      "data": "2022-05-15"
+      "medicamento": "Paracetamo",
+      "fabricante": "Vicopharma",
+      "data": "1212-12-12",
+      "imagem": "data:image/jpeg;base64,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",
+      "link": "https://www.drogaraia.com.br/paracetamol-750-mg-ems-genericos-20-comprimidos.html#:~:text=O%20Paracetamol%20%C3%A9%20indicado%20em,a%20artrites%20e%20c%C3%B3licas%20menstruais.",
+      "descricao": "O Paracetamol é indicado em adultos para a redução da febre e para o alívio temporário de dores leves a moderadas, tais como: dores associadas a resfriados comuns, dor de cabeça, dor no corpo, dor de dente, dor nas costas, dores musculares, dores leves associadas a artrites e cólicas menstruais.",
+      "egenerico": "Medicamento não é generico",
+      "id": 1
     },
     {
-      "id": 2,
-      "medicamento": "Ibuprofeno",
-      "fabricante": "PharmaLife",
-      "data": "2022-06-20"
+      "medicamento": "Dipirona",
+      "fabricante": "Prati",
+      "data": "2005-10-12",
+      "imagem": "data:image/jpeg;base64,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",
+      "link": "https://www.benegrip.com.br/saude/tratamentos-gripe/o-que-e-dipirona-monoidratada#:~:text=A%20dipirona%20%C3%A9%20uma%20pr%C3%B3,agente%20antipir%C3%A9tico%20(ou%20antit%C3%A9rmico).",
+      "descricao": "A dipirona é uma pró-droga, que se decompõe espontaneamente após a administração oral. Depois de ser metabolizada pelo corpo, ela se torna ativa. Além de seu efeito analgésico (contra a dor), o medicamento é um agente antipirético (ou antitérmico).",
+      "egenerico": "Medicamento não é generico",
+      "id": 2
     },
     {
       "medicamento": "Paracetamo",
-      "fabricante": "Farmavida",
-      "data": "1234",
+      "fabricante": "Vicopharma",
+      "data": "3210-02-22",
+      "imagem": "data:image/jpeg;base64,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",
+      "link": "https://www.drogaraia.com.br/paracetamol-750-mg-ems-genericos-20-comprimidos.html#:~:text=O%20Paracetamol%20%C3%A9%20indicado%20em,a%20artrites%20e%20c%C3%B3licas%20menstruais.",
+      "descricao": "O Paracetamol é indicado em adultos para a redução da febre e para o alívio temporário de dores leves a moderadas, tais como: dores associadas a resfriados comuns, dor de cabeça, dor no corpo, dor de dente, dor nas costas, dores musculares, dores leves associadas a artrites e cólicas menstruais.",
+      "egenerico": "Medicamento não é generico",
+      "cidade": "Cidade não identificada",
       "id": 3
-    },
-    {
-      "medicamento": "Paracetamo",
-      "fabricante": "Vicopharma",
-      "data": "1234",
-      "id": 4
-    },
-    {
-      "medicamento": "Ggg",
-      "fabricante": "Gggggg",
-      "data": "1234",
-      "id": 5
-    },
-    {
-      "medicamento": "Paracetamo",
-      "fabricante": "Vicopharma",
-      "data": "1234",
-      "id": 6
-    },
-    {
-      "medicamento": "Paracetamo",
-      "fabricante": "Vicopharma",
-      "data": "1234",
-      "id": 7
-    },
-    {
-      "medicamento": "Dipirona",
-      "fabricante": "Vicopharma",
-      "data": "1234",
-      "id": 8
-    },
-    {
-      "medicamento": "Dipirona",
-      "fabricante": "Dw",
-      "data": "1234",
-      "id": 9
-    },
-    {
-      "medicamento": "Eerr",
-      "fabricante": "Vicopharma",
-      "data": "1234",
-      "id": 10
-    },
-    {
-      "medicamento": "Paracetamo",
-      "fabricante": "Vicopharma",
-      "data": "1234",
-      "id": 11
-    },
-    {
-      "medicamento": "Paracetamo",
-      "fabricante": "Vicopharma",
-      "data": "1234",
-      "id": 12
-    },
-    {
-      "medicamento": "Dipirona",
-      "fabricante": "Vicopharma",
-      "data": "1234",
-      "id": 13
-    },
-    {
-      "medicamento": "Paracetamo",
-      "fabricante": "Vicopharma",
-      "data": "1234",
-      "id": 14
-    },
-    {
-      "medicamento": "Paracetamo",
-      "fabricante": "Vicopharma",
-      "data": "1234",
-      "id": 15
-    },
-    {
-      "medicamento": "Paracetamo",
-      "fabricante": "Vicopharma",
-      "data": "1234",
-      "id": 16
-    },
-    {
-      "medicamento": "Paracetamo",
-      "fabricante": "Vicopharma",
-      "data": "1234",
-      "id": 17
-    },
-    {
-      "medicamento": "Paracetamo",
-      "fabricante": "Vicopharma",
-      "data": "1235",
-      "id": 18
-    },
-    {
-      "medicamento": "Paracetamo",
-      "fabricante": "Vicopharma",
-      "data": "1234",
-      "id": 19
-    },
-    {
-      "medicamento": "Paracetamo",
-      "fabricante": "Vicopharma",
-      "data": "1234",
-      "id": 20
-    },
-    {
-      "medicamento": "E",
-      "fabricante": "Vicopharma",
-      "data": "123",
-      "id": 21
-    },
-    {
-      "medicamento": "Dipirona",
-      "fabricante": "Vicopharma",
-      "data": "1410",
-      "id": 22
-    },
-    {
-      "medicamento": "Paracetamo",
-      "fabricante": "Vicopharma",
-      "data": "1234",
-      "id": 23
-    },
-    {
-      "medicamento": "Paracetamo",
-      "fabricante": "Vicopharma",
-      "data": "1223",
-      "id": 24
     }
   ]
 }

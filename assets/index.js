@@ -28,7 +28,7 @@ setTimeout( function (){
  const proximo = atual.nextElementSibling;
  proximo.classList.add('blue');
  proximo.classList.add('lighten-4');
-
+$('h4').css('color', '#26a69a');
  $('.rodape > h5').css('font-weight', 'bold');
  $('div + p').css('color', 'blue');
  $('div button').css('color', 'purple');
@@ -56,6 +56,10 @@ $('#apagar').on('dblclick', function() {
  let mensagem = 'sistema iniciado ' + hora + ':' + minutos + ':' + segundos + ';';
  localStorage.setItem('chave', mensagem);
  console.log('sistema ok');
+ $('#hora').text('Sistema acessado as: '+hora+' : '+minutos+' : '+segundos+';');
+ $('#click-aqui').focus(function() {
+  $(this).val('Você foi enganado');
+});
 }, 500);
 
 

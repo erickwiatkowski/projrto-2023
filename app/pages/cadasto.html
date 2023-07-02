@@ -36,24 +36,55 @@
     <div class="col s2 m2 l2 xl2"></div>
     <div class="col s8 m8 l8 xl8">
 <form id="cadastro-form" action="" >
-  <label for="medicamento">Medicamento:</label>
+  <label for="medicamento"></label>
+  <p>Medicamento:</p>
   <input placeholder="Insira o nome do medicamento" name="medicamento" type="text" class="validate" id="medicamento" onfocus="meds()" onblur="medn()" pattern="[A-Za-z]+" required>
   <span></span>
-  
-  <label for="fabricante">Fabricante:</label>
-  <input  name="fabricante" type="text" class="validate" id="fabricante" onfocus="fabs()" onblur="fabn()" pattern="[A-Za-z]+" required>
+
+  <label for="fabricante"></label>
+  <p>Fabricante:</p>
+  <input  placeholder="Insira o nome do Fabricante" name="fabricante" type="text" class="validate" id="fabricante" onfocus="fabs()" onblur="fabn()" pattern="[A-Za-z]+" required>
   <span></span>
-  
-  <label for="data-de-compra">Data de Compra:</label>
-  <input name="data-de-compra" type="number" min="0" max="9999" class="validate" id="data-de-compra"  onfocus="dats()" onblur="datn()" required>
+
+  <label for="data-de-compra"></label>
+  <p>Data de Compra:</p>
+  <input placeholder="Insira a Data de compra" name="data-de-compra" type="date" min="01/01/0001" max="31/12/2999"  class="validate" id="data-de-compra"  onfocus="dats()" onblur="datn()" required>
   <span></span>
-  
-  <button type="submit" class="btn-floating btn-large waves-effect waves-light purple" id="botao-cadastrar"><i class="material-icons" >add</i></button>
+
+  <label for="imagem"></label>
+  <p>Link para imagem:</p>
+  <input  placeholder="Insira o link para imagem do produto" name="iamgem" type="text" class="validate" id="imagem" onfocus="fabs()" onblur="fabn()"  required>
+  <span></span>
+
+  <label for="link"></label>
+  <p>Link para o site:</p>
+  <input  placeholder="Insira o link para mais informacoes" name="link" type="text" class="validate" id="link" onfocus="fabs()" onblur="fabn()"  required>
+  <span></span>
+
+  <label for="descricao"></label>
+  <p>Insira uma descrição do medicamento:</p>
+  <input  placeholder="Insira uma pequena descrição do medicamento" name="descricao" type="text" class="validate" id="descricao" onfocus="fabs()" onblur="fabn()"  required>
+  <span></span>
+
+  <label for="cep"></label>
+  <p>Insira o cep da fabricante:</p>
+  <input  placeholder="Insira o cep da fabricante:" name="cep" type="text" class="validate" id="cep" onfocus="fabs()" onblur="fabn()"  required>
+  <span></span>
+  <p>
+    <label>
+      <input type="checkbox" id="egenerico" />
+      <span>É generico</span>
+    </label>
+  </p>
+
+  <button class="btn waves-effect waves-light" type="submit" name="action" id="botao-cadastrar">Cadastrar
+    <i class="material-icons right">send</i>
+  </button>
 </form>
     </div>
-    <div class="col s2 m2 l2 xl2"></div>
+    
   </div>
- 
+  <div class="col s2 m2 l2 xl2"></div>
 
 
   <script src="/node_modules/jquery/dist/jquery.js"></script>

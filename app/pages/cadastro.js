@@ -6,7 +6,10 @@ let usuariosemespaco = usuario.trim();
 let acesso = usuariosemespaco.toUpperCase();
 if (acesso === 'ERIC') {
   window.alert('Bem vindo !!!');
-
+  $(document).ready(function() {
+    // Aplicar a máscara de data no campo desejado usando o plugin
+    $('#data-de-compra').mask('00/00/0000');
+  });
   let produtos = JSON.parse(localStorage.getItem('produtos')) || [];
 
   let cadastroForm = document.getElementById('cadastro-form');
@@ -15,9 +18,33 @@ if (acesso === 'ERIC') {
 
   function validar(e) {
     e.preventDefault();
-    let newmedicamento = document.getElementsByName('medicamento')[0].value;
+    var form = document.forms[0]; 
+    var newmedicamento = form.elements[0].value;
     let newfabricante = document.getElementsByName('fabricante')[0].value;
     let newcompra = document.getElementsByName('data-de-compra')[0].value;
+    let newimagem = $('#imagem').val();
+    let newlink = document.getElementsByName('link')[0].value;
+    let newdescricao = document.getElementsByName('descricao')[0].value;
+    let cep = document.getElementsByName('cep')[0].value;
+    let cidade = 'Cidade não identificada';
+    let egenerico = 'Medicamento não é generico';
+    const meuCheckbox = document.querySelector('#egenerico');
+        const isChecked = meuCheckbox.checked;
+        if (isChecked) {
+          egenerico = 'Medicamento é generico';
+        } else {
+          egenerico = 'Medicamento não é generico';;}
+
+fetch(`https://viacep.com.br/ws/${cep}/json/`)
+    .then(response => response.json())
+    .then(data => {
+      if (data.cep) {
+      cidade= ` ${data.localidade}`; 
+            } else {
+              cidade('CEP não encontrado ou inválido.');} })
+          .catch(error => {
+            console.error('Erro:', error);
+          });
 
     if (newmedicamento.trim() === '') {
       window.alert('Campo do nome é inválido');
@@ -32,17 +59,14 @@ if (acesso === 'ERIC') {
       return false;
     }
 
-    cadastrar();
+    cadastrar(newmedicamento, newfabricante, newcompra, newimagem, newlink, newdescricao, egenerico, cidade);
     return true;
   }
 
-  function cadastrar() {
-    let newmedicamento = document.getElementsByName('medicamento')[0].value;
-    let newfabricante = document.getElementsByName('fabricante')[0].value;
-    let newcompra = document.getElementsByName('data-de-compra')[0].value;
-    let medicamento = newmedicamento.charAt(0).toUpperCase() + newmedicamento.slice(1);
+  function cadastrar(newmedicamento, newfabricante, newcompra, newimagem, newlink, newdescricao, egenerico, cidade) {
+     let medicamento = newmedicamento.charAt(0).toUpperCase() + newmedicamento.slice(1);
     let fabricante = newfabricante.charAt(0).toUpperCase() + newfabricante.slice(1);
-    let newProduto = new Medicamento(medicamento, fabricante, newcompra);
+    let newProduto = new Medicamento(medicamento, fabricante, newcompra, newimagem, newlink, newdescricao, egenerico, cidade);
 
     produtos.push(newProduto);
 
