@@ -1,10 +1,10 @@
 'use strict';
-import { Medicamento } from "https://erickwiatkowski.github.io/projrto-2023/app/model/medicamento.js";
+import { Medicamento } from "/app/model/medicamento.js";
 
 let usuario = window.prompt('Insira seu nome: ');
 let usuariosemespaco = usuario.trim();
 let acesso = usuariosemespaco.toUpperCase();
-if (acesso === 'ERIC'  || 'LE') {
+if (acesso === 'ERIC') {
   window.alert('Bem vindo !!!');
   $(document).ready(function() {
     // Aplicar a máscara de data no campo desejado usando o plugin
@@ -21,7 +21,7 @@ if (acesso === 'ERIC'  || 'LE') {
     var form = document.forms[0]; 
     var newmedicamento = form.elements[0].value;
     let newfabricante = document.getElementsByName('fabricante')[0].value;
-    let newcompra = document.getElementsByName('data-de-compra')[0].value;
+    let validade = document.getElementsByName('data-de-vencimento')[0].value;
     let newimagem = $('#imagem').val();
     let newlink = document.getElementsByName('link')[0].value;
     let newdescricao = document.getElementsByName('descricao')[0].value;
@@ -45,20 +45,31 @@ if (acesso === 'ERIC'  || 'LE') {
       window.alert('Campo do fabricante é inválido');
       return false;
     }
-    if (newcompra.trim() === '') {
+    if (validade.trim() === '') {
       window.alert('Campo do data de compra é inválido');
       return false;
     }
+
+    let dataAtual = new Date();
+    let ano = dataAtual.getFullYear();
+    let mes = dataAtual.getMonth() + 1;
+    let dia = dataAtual.getDate();
+    let hora = dataAtual.getHours();
+    let minutos = dataAtual.getMinutes();
+    let segundos = dataAtual.getSeconds();
+    let compra = `Medicamento comprado ${dia}/${mes}/${ano} as:${hora}:${minutos}:${segundos}`;
    
   fetch(`https://viacep.com.br/ws/${cep}/json/`)
   .then(response => response.json())
   .then(data => {
     if (data.cep) {
       cidade = ` ${data.localidade}`; 
-      cadastrar(newmedicamento, newfabricante, newcompra, newimagem, newlink, newdescricao, egenerico, cidade);
+      cadastrar(newmedicamento, newfabricante, validade, 
+        newimagem, newlink, newdescricao, egenerico, cidade, compra);
     } else {
       cidade = 'CEP não encontrado ou inválido.';
-      cadastrar(newmedicamento, newfabricante, newcompra, newimagem, newlink, newdescricao, egenerico, cidade);
+      cadastrar(newmedicamento, newfabricante, validade, 
+        newimagem, newlink, newdescricao, egenerico, cidade, compra);
 
     }
   })
@@ -68,10 +79,12 @@ if (acesso === 'ERIC'  || 'LE') {
   return true;
   }
 
-  function cadastrar(newmedicamento, newfabricante, newcompra, newimagem, newlink, newdescricao, egenerico, cidade) {
+  function cadastrar(newmedicamento, newfabricante, validade, 
+    newimagem, newlink, newdescricao, egenerico, cidade, compra) {
      let medicamento = newmedicamento.charAt(0).toUpperCase() + newmedicamento.slice(1);
     let fabricante = newfabricante.charAt(0).toUpperCase() + newfabricante.slice(1);
-    let newProduto = new Medicamento(medicamento, fabricante, newcompra, newimagem, newlink, newdescricao, egenerico, cidade);
+    let newProduto = new Medicamento(medicamento, fabricante, validade, 
+      newimagem, newlink, newdescricao, egenerico, cidade, compra);
 
     produtos.push(newProduto);
 
