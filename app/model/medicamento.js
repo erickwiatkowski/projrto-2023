@@ -14,7 +14,7 @@ export class Medicamento{
 }
 
 window.onload = function () {
-  fetch('http://localhost:3000/produtos')
+  fetch('https://my-json-server.typicode.com/erickwiatkowski/projrto-2023/produtos')
     .then(response => response.json())
     .then(data => {
       const produtos = data || [];
